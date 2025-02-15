@@ -84,15 +84,7 @@ class MLFF(nn.Module):
         return self.conv(torch.cat((xs[0], xs[1], xs[2]), 1))
 
 
-# GCLv1
 class AFSBlock(nn.Module):
-    r""" Our implementation of Gated CNN Block: https://arxiv.org/pdf/1612.08083
-    Args:
-        conv_ratio: control the number of channels to conduct depthwise convolution.
-            Conduct convolution on partial channels can improve paraitcal efficiency.
-            The idea of partial channels is from ShuffleNet V2 (https://arxiv.org/abs/1807.11164) and
-            also used by InceptionNeXt (https://arxiv.org/abs/2303.16900) and FasterNet (https://arxiv.org/abs/2303.03667)
-    """
     def __init__(self, dim, expansion_ratio=8/3, kernel_size=7, conv_ratio=1.0,
                  norm_layer=partial(nn.LayerNorm,eps=1e-6),
                  act_layer=nn.GELU,
@@ -125,7 +117,6 @@ class AFSBlock(nn.Module):
 
 
 class AFSModule(nn.Module):
-    """Faster Implementation of CSP Bottleneck with 2 convolutions."""
 
     def __init__(self, c1, c2, n=1, ratio=2):
         """Initialize CSP bottleneck layer with two convolutions with arguments ch_in, ch_out, number, shortcut, groups,
@@ -140,7 +131,6 @@ class AFSModule(nn.Module):
         # self.fg = FGlo(c2)
 
     def forward(self, x):
-        """Forward pass through C2f layer."""
         # x = self.ls(x)
         return self.GCL(x)
         # return self.conv2(self.GCL(self.conv1(x)))+x
