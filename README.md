@@ -78,8 +78,8 @@ References:
 
 [4] A. Farhadi and J. Redmon. Yolov3: An incremental improvement. Computer vision and pattern recognition. 1804, 1–6(2018).
 
-[6] G. Jocher. Ultralytics YOLOv5 version 7.0. url: https://github.com/ultralytics/yolov5(2020)
+[5] G. Jocher. Ultralytics YOLOv5 version 7.0. url: https://github.com/ultralytics/yolov5(2020)
 
-[7] A. Wang, H. Chen, L. Liu, K. Chen, Z. Lin, J. Han, and G. Ding. Yolov10: Real-time end-to-end object detection. arXiv preprint arXiv:2405.14458.(2024).
+[6] A. Wang, H. Chen, L. Liu, K. Chen, Z. Lin, J. Han, and G. Ding. Yolov10: Real-time end-to-end object detection. arXiv preprint arXiv:2405.14458.(2024).
 
 
